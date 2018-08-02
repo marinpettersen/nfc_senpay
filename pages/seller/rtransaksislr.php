@@ -20,6 +20,7 @@
                         <table class="table color-table inverse-table">
                             <thead>
                                 <tr>
+                                    <th width="5%">#</th>
                                     <th>ID Transaksi</th>
                                     <th>Tanggal Transaksi</th>
                                     <th>Customer</th>
@@ -34,10 +35,12 @@
                                     include "config/koneksi.php";
                                     $query="SELECT * FROM transaksi where trans_to='$username'";
                                     $exe = mysqli_query($connect,$query);
+                                    $no = 1;
                                     while($data=mysqli_fetch_array($exe)){
                                 ?>
                                 
                                 <tr>
+                                    <td><?php echo $no++;?></td>
                                     <td><?php echo $data['id_transaksi']; ?></td>
                                     <td><?php echo date('d-m-Y H:i', strtotime($data['waktu']));?></td>
                                     <td><?php echo $data['trans_from']; ?></td>
