@@ -67,13 +67,13 @@
                                         <form role="form" method="POST" action="pages/admin/p_edit_dagang.php?id=<?php echo $id_sell; ?>">
                                             <div class="form-group">
                                                 <label>nama</label>
-                                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Seller">
+                                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Seller" required>
                                                 <label>No. KTP</label>
-                                                <input type="text" class="form-control" name="ktp" id="nim" placeholder="No. KTP">
+                                                <input type="text" class="form-control" name="ktp" id="ktp" placeholder="No. KTP" required>
                                                 <label>telpon</label>
-                                                <input type="tel" class="form-control" name="telpon" id="telpon" placeholder="123-4567-8910" required>
+                                                <input type="tel" class="form-control" name="telpon" id="telpon" placeholder="" required>
                                                 <label>alamat</label>
-                                                <input type="text" class="form-control" name="addr" id="addr" placeholder="Alamat">
+                                                <input type="text" class="form-control" name="addr" id="addr" placeholder=""required>
                                             </div>
                                     </div>
                                     <div class="modal-footer">

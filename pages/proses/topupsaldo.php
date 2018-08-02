@@ -5,7 +5,10 @@ $nm = $_POST['nm'];
 $topup = $_POST['saldocus'];
 
 
-
+if($topup>1000000){
+    echo "<script>window.alert('Saldo Melebihi Limit!')</script>";
+    echo "<script>window.location='../../index.php?p=pemegangnfc'</script>";
+}else{
 // $cek = "SELECT s.saldo, u.username as uname FROM customer s join user u ON u.id_user = s.id_user where id_card='$nm'";
 $cek = "SELECT * from customer WHERE id_card='$nm'";
 $exec = mysqli_query($connect,$cek);
@@ -32,6 +35,6 @@ if($data=mysqli_fetch_array($exec)){
     }
 }
 
-
+}
 ?> 
 

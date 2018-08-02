@@ -90,13 +90,11 @@
                                         <form role="form" method="POST" action="pages/admin/editusrnfc.php?id=<?php echo $id_cust; ?>">
                                             <div class="form-group">
                                                 <label>nama</label>
-                                                <input type="text" class="form-control" name="nama" id="nama" placeholder="nama">
+                                                <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" required>
                                                 <label>nim</label>
-                                                <input type="text" class="form-control" name="nim" id="nim" placeholder="nim">
+                                                <input type="text" class="form-control" name="nim" id="nim" placeholder="nim" required>
                                                 <label>telpon</label>
-                                                <input type="tel" class="form-control" name="telpon" id="telpon" placeholder="">
-                                                <label>saldo</label>
-                                                <input type="number" class="form-control" name="saldo" id="saldo" placeholder="saldo">
+                                                <input type="tel" class="form-control" name="telpon" id="telpon" placeholder="" required>
                                             </div>
                                     </div>
                                     <div class="modal-footer">
@@ -121,31 +119,3 @@
 </div>
 </div>
 </div>
-<script type="text/javascript">
-    $('#btntambah').click(function () {
-        $('#tambah').modal({
-            show: true,
-            backdrop: 'static',
-            keyboard: false,
-
-        })
-    })
-    $(function () {
-        $('#mytable').DataTable();
-    });
-
-    $(".btnedit").click(function () {
-        $('#edit').modal({
-            show: true,
-            backdrop: 'static',
-            keyboard: false,
-        });
-        $("#id_customer").val($(this).closest('tr').children()[0].textContent);
-        $("#nama").val($(this).closest('tr').children()[1].textContent);
-        $("#saldo").val($(this).closest('tr').children()[2].textContent);
-    });
-
-    $(document).ready(function () {
-        $('#mytable').DataTable();
-    });
-</script>

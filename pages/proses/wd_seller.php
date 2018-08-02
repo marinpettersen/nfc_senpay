@@ -9,6 +9,10 @@ $cek = "SELECT s.saldo, u.username as uname FROM seller s join user u ON u.id_us
 $exec = mysqli_query($connect,$cek);
 if($data=mysqli_fetch_array($exec)){
 // query SQL untuk insert data
+if($data['saldo']==0){
+    echo "<script>window.alert('Saldo Anda Tidak Ada!')</script>";
+    echo "<script>window.location='../../index.php?p=akunpedagang'</script>";
+}else{
     $sisa=$data['saldo']-$tarik;
     $unm=$data['uname'];
     $query="UPDATE seller SET saldo='$sisa' where kode_seller='$kd'";
@@ -27,6 +31,7 @@ if($data=mysqli_fetch_array($exec)){
             echo "<script>window.location='../../index.php?p=akunpedagang'</script>";
         }
     }
+}
 }
 
 

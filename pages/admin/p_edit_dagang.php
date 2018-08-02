@@ -6,6 +6,7 @@ $ktp            = $_POST['ktp'];
 $telp           = $_POST['telpon'];
 $add            = $_POST['addr'];
 
+
 // query SQL untuk insert data
 $query="UPDATE seller SET nama='$nama', noktp='$ktp', telp='$telp', alamat='$add' where id_seller='$id_'";
 $exe=mysqli_query($connect, $query);
