@@ -121,7 +121,7 @@ if (isset($_GET['p'])) {
                         if($level_user=='admin'){
                         ?>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">
                             Withdraw
                         </button>
                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal2">

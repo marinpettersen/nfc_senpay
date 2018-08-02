@@ -20,6 +20,7 @@
                                     <table class="table color-table inverse-table">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>id seller</th>
                                                 <th>id_user</th>
                                                 <th>kode seller</th>
@@ -42,6 +43,7 @@
                                                     $id_sell=$hasil['id_seller'];
                                                 ?>  
                                                 <tr>
+                                                <td><?php echo $i-1; ?></td>
                                                 <td><?php echo $hasil['id_seller']; ?></td>
                                                 <td><?php echo $hasil['id_user']; ?></td>
                                                 <td><?php echo $hasil['kode_seller']; ?></td>

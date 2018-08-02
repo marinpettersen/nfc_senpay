@@ -19,9 +19,10 @@
                                     <table class="table color-table inverse-table">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>ID_USER</th>
                                                 <th>USERNAME</th>
-                                                <th class"text-nowrap"> Option</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -32,18 +33,17 @@
                                             <?php
                                             $tampilkan = "SELECT * FROM user WHERE level='admin'";
                                         $sql = mysqli_query($connect,$tampilkan);
+                                        $i=1;
                                         while($hasil = mysqli_fetch_array($sql))
                                                 {
-
+                                                        $i=$i+1;
                                                 ?>  
                                                 <tr>
+                                                <td><?php echo $i-1; ?></td>
                                                 <td><?php echo $hasil['id_user']; ?></td>
                                                 <td><?php echo $hasil['username']; ?></td>
                                                 
-                                                <td class="text-nowrap">
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
+                                                
                                             </tr>
                                             <?php
                                                 }

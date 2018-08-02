@@ -3,7 +3,7 @@ include "../../config/koneksi.php";
 
 $uname=$_POST['username'];
 $fnm=$_POST['fname'];
-$pass=$_POST['password'];
+$pass=md5($_POST['password']);
 $kdslr=$_POST['kodeslr'];
 $noktp=$_POST['noktp'];
 $tlp=$_POST['notelp'];
