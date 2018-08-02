@@ -72,7 +72,7 @@
                                         <a data-toggle="modal" data-target="#edit<?php echo $i; ?>" data-original-title="Edit">
                                             <i class="fa fa-pencil text-inverse m-r-10"></i>
                                         </a>
-                                        <a href="pages/admin/deleteusrnfc.php?id=<?php echo $id_cust; ?>" role="button">
+                                        <a href="pages/admin/deleteusrnfc.php?id=<?php echo $id_cust; ?>&id2=<?php echo $hasil['id_user']; ?>" role="button">
                                             <i class="fa fa-close text-danger"></i>
                                         </a>
                                     </td>

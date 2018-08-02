@@ -37,7 +37,10 @@
 					echo '0';
 					return true;
 				}
-			}else{
+			}/*else if($remaining<$cost||$remaining<=0){
+				
+			}*/
+			else{
 				echo '0';
 				return true;
 			}

@@ -53,7 +53,7 @@
                                                 <td><?php echo $hasil['saldo']; ?></td>
                                                 <td class="text-nowrap">
                                                     <a href="#" data-toggle="modal" data-target="#dagang<?php echo $i; ?>" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="pages/admin/p_del_dagang.php?id=<?php echo $id_sell; ?>" role="button"> <i class="fa fa-close text-danger"></i> </a>
+                                                    <a href="pages/admin/p_del_dagang.php?id=<?php echo $id_sell; ?>&id2=<?php echo $hasil['id_user']; ?>" role="button"> <i class="fa fa-close text-danger"></i> </a>
                                                 </td>
                                             </tr>
                         <div id="dagang<?php echo $i; ?>" class="modal fade" role="dialog">
