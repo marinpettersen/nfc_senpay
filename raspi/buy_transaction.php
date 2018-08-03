@@ -19,7 +19,7 @@
 
 			$remaining = $data_customer['saldo']-$cost;
 
-			if($remaining>0){
+			if($remaining>=0){
 				$query = "INSERT INTO transaksi (trans_from, trans_to, trans_type, nominal, waktu) VALUES('$id_card', '$seller_code', '$trans_type', '$cost', '$tanggal')";
 				$sql = mysqli_query($connect, $query);
 
@@ -31,22 +31,23 @@
 					$query = "UPDATE seller SET saldo=saldo+".$cost." WHERE kode_seller='$seller_code'";
 					$sql = mysqli_query($connect, $query);
 
-					echo $remaining;
+					echo "3,".$remaining;
+					return true;
 
 				}else{
-					echo '0';
+					echo '0,0';
 					return true;
 				}
 			}/*else if($remaining<$cost||$remaining<=0){
 				
 			}*/
 			else{
-				echo '0';
+				echo '1,'.$remaining;
 				return true;
 			}
 			
 		}else{
-			echo '0';
+			echo '0,0';
 			return true;
 		}
 
