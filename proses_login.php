@@ -17,7 +17,7 @@ if($result>0){
   $_SESSION['username'] = $username;
   $_SESSION['level'] = $data['level'];
   $_SESSION['id_user'] = $data['id_user'];
-  $_SESSION['id_seller'] = $data['id_seller'];
+  $_SESSION['id_seller'] = $data['id_user'];
   //echo $_SESSION['type'];
   
   mysqli_close();

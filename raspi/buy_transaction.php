@@ -28,7 +28,7 @@
 					$query = "UPDATE customer SET saldo=saldo-".$cost." WHERE id_card='$id_card'";
 					$sql = mysqli_query($connect, $query);
 
-					$query = "UPDATE seller SET saldo= saldo+".$cost." WHERE kode_seller='$seller_code'";
+					$query = "UPDATE seller SET saldo=saldo+".$cost." WHERE kode_seller='$seller_code'";
 					$sql = mysqli_query($connect, $query);
 
 					echo $remaining;

@@ -140,9 +140,10 @@ if (isset($_GET['p'])) {
                             </a>
                         <?php 
                         }else{
-                            $blc = "SELECT saldo FROM seller where id_user='$id'";
+                            $blc = "SELECT saldo,kode_seller FROM seller where id_user='$id'";
                             $exe = mysqli_query($connect,$blc);
                             $data = mysqli_fetch_assoc($exe);
+                            $kode_s = $data['kode_seller'];
                         ?>
                             <a class="nav-link text-muted waves-effect waves-dark" href="#"> <i class="mdi mdi-wallet"></i> My Balance : <?php echo $data['saldo']; ?></a></i>
                                 <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
