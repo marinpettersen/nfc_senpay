@@ -162,6 +162,14 @@ if (isset($_SESSION['level'])){
                         <span class="hide-menu">Riwayat Transaksi</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="?p=formbuktitrans">
+                        <i class="mdi mdi-upload"></i>
+                        <span class="hide-menu">Top Up with Transfer</span>
+                    </a>
+                </li>
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

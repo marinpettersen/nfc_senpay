@@ -121,10 +121,10 @@ if (isset($_GET['p'])) {
                         if($level_user=='admin'){
                         ?>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
                             Withdraw
                         </button>
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal2">
+                        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal2">
                             TOP UP</button>
                         <?php
                         }elseif($level_user=='user'){
@@ -243,6 +243,8 @@ if (isset($_GET['p'])) {
                         include "pages/user/viewprofileusr.php";
                     }else if($p == 'rtransaksibuy' || $p == '') {
                         include "pages/user/rtransaksibuy.php";
+                    }else if($p == 'formbuktitrans' || $p == ''){
+                        include "pages/user/formbuktitrans.php";
                     }else{
                         header("location:page_404.php");
                     }
