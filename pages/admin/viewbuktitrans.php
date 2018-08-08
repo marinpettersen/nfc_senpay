@@ -21,6 +21,7 @@
                             <thead>
                                 <tr>
                                     <th width="5%">#</th>
+                                    <th>Nama</th>
                                     <th>Foto Bukti Transfer</th>
                                     <th>Keterangan</th>
                                     <th>No. Transaksi</th>
@@ -28,36 +29,23 @@
                                     <th>Jumlah</th>
                                 </tr>
                             </thead>
-                            <?php
-                            ?>
                             <tbody>
-                                <?php
+                            <?php
                                     include "config/koneksi.php";
-                                    $query="SELECT * FROM transfer_rek where trans_to='$kode_s'";
-                                    $exe = mysqli_query($connect,$query);
-                                    
+                                    $qq = "SELECT * FROM transfer_rek";
+                                    $exe = mysqli_query($connect,$qq);
                                     $no = 1;
                                     while($data=mysqli_fetch_array($exe)){
                                 ?>
                                 
                                 <tr>
-                                    <td><?php echo ++$no;?></td>
-                                    <td><?php echo $data['id_transaksi']; ?></td>
-                                    <td><?php echo date('d-m-Y H:i', strtotime($data['waktu']));?></td>
-                                    <td><?php echo $data['trans_from']; ?></td>
-                                    <td><?php 
-                                    $tipe=$data['trans_type'];
-                                    if($tipe==1){
-                                        echo 'top up';
-                                    }elseif($tipe==2){
-                                        echo 'penjualan';
-                                    }elseif($tipe==3){
-                                        echo 'withdraw';
-                                    }else{
-                                        echo 'jenis transaksi ini ilegal';
-                                    }
-                                    ?></td>
-                                    <td><?php echo $data['nominal']; ?></td>
+                                    <td><?php echo $no++; ?></td>
+                                    <td>s</td>
+                                    <td><img src="uploads/<?php echo $data['upload']; ?>" alt="img"></td>
+                                    <td><?php echo $data['keterangan']; ?></td>
+                                    <td><?php echo $data['no_transaksi']; ?></td>
+                                    <td><?php echo date('d-m-Y ', strtotime($data['tgl_transfer']));?></td>
+                                    <td><?php echo $data['jmlh_transfer']; ?></td>
                                 </tr>
                                 <?php
                                     }

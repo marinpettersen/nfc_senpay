@@ -19,7 +19,7 @@ if (isset($_POST)==true){
     if(in_array($ekstensiFile, $ekstensiOk)){
         if(move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFilePath)){
             $sql = "INSERT INTO transfer_rek (upload,keterangan,no_transaksi,tgl_transfer,jmlh_transfer,id_user) 
-            VALUES ('".$targetFilePath."','".$ket."','".$notrans."','".$tgltrans."','".$jumtrans."','".$_SESSION['id_user']."')";
+            VALUES ('".$namafile."','".$ket."','".$notrans."','".$tgltrans."','".$jumtrans."','".$_SESSION['id_user']."')";
             $execute = mysqli_query($connect,$sql);
             if ($execute) {
                 
