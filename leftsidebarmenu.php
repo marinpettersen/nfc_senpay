@@ -16,7 +16,11 @@ if (isset($_SESSION['level'])){
             <!-- User profile text-->
             <div class="profile-text">
                 <h5><?php echo $username; ?></h5>
-
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
+                            Withdraw
+                        </button>
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal2">
+                            TOP UP</button>
             </div>
         </div>
         <!-- End User profile text-->

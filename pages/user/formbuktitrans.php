@@ -26,7 +26,7 @@
                                 <p>3. Masukan Jumlah Transfer sesuai keinginan Top Up Saldo</p>
                                 <p>4. Jangan lupa Foto struk bukti transfer</p>
                                 <p>5. Selanjutnya Upload struk bukti Transfer melalui menu navigasi Top up with transfer</P>
-                                <p>6. Lalu isi Form bukti transfer</p><code>*note proses top up dengan transfer hanya pada jam kerja petugas</code>
+                                <p>6. Lalu isi Form bukti transfer</p><code>*note : proses top up dengan transfer hanya pada jam kerja petugas</code>
                                 </p>
                                 
                             </div>
@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Form Validation</h4>
                                 <h6 class="card-subtitle">Form Upload Bukti Transfer</a></h6>
-                                <form class="m-t-40" novalidate>
+                                <form class="m-t-40" novalidate action="pages/user/prosesbuktitrans.php?id=<?php echo $_SESSION['id_user'];?>" method="post">
                                     <div class="form-group">
                                         <h5>Upload Bukti Transfer <span class="text-danger">*</span></h5>
                                         <div class="controls"<small> <code>Required</code> Rename file bukti transfer anda dengan no transaksi sebelum upload</small>
@@ -66,7 +66,7 @@
                                     <div class="form-group">
                                         <h5>Tanggal Transfer <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" required> </div>
+                                            <input type="date" name="tgltrans" class="form-control" placeholder="dd/mm/yyyy" required> </div>
                                     </div>
                                     
                                     <div class="form-group">
