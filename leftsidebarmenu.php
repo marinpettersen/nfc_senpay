@@ -72,6 +72,14 @@ if (isset($_SESSION['level'])){
                 </li>
 
                 <li>
+                    <a href="?p=viewbuktitrans">
+                        <i class="mdi mdi-file-chart"></i>
+                        <span class="hide-menu">View Bukti Transaksi</span>
+                    </a>
+                    
+                </li>
+
+                <li>
                     <a href="?p=tambahadmin">
                         <i class="mdi mdi-account-settings-variant"></i>
                         <span class="hide-menu">Tambah Admin</span>

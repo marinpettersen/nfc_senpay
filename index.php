@@ -219,6 +219,8 @@ if (isset($_GET['p'])) {
                         include "pages/admin/rtransaksipembeli.php";
                     }elseif ($p == 'rtransaksipedagang' ) {
                         include "pages/admin/rtransaksipedagang.php";
+                    }elseif ($p == 'viewbuktitrans' ) {
+                        include "pages/admin/viewbuktitrans.php";
                     }elseif ($p == 'tambahadmin' ){
                         include "pages/admin/tambahadmin.php";
                     }elseif ($p == 'reg_nfc' ){

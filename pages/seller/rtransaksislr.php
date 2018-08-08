@@ -45,18 +45,22 @@
                                     <td><?php echo $data['id_transaksi']; ?></td>
                                     <td><?php echo date('d-m-Y H:i', strtotime($data['waktu']));?></td>
                                     <td><?php echo $data['trans_from']; ?></td>
-                                    <td><?php 
-                                    $tipe=$data['trans_type'];
-                                    if($tipe==1){
-                                        echo 'top up';
-                                    }elseif($tipe==2){
-                                        echo 'penjualan';
-                                    }elseif($tipe==3){
-                                        echo 'withdraw';
-                                    }else{
-                                        echo 'jenis transaksi ini ilegal';
-                                    }
-                                    ?></td>
+                                    <td><?php
+                                            switch ($data['trans_type']) {
+                                                case 1:
+                                                    echo '<h3><span class="badge badge-primary">Top up</span></h3>';
+                                                    break;
+                                                case 2:
+                                                    echo '<h3><span class="badge badge-success">Beli</span></h3>';
+                                                    break;
+                                                case 3:
+                                                    echo '<h3><span class="badge badge-info">Withdraw</span></h3>';
+                                                    break;
+                                                default:
+                                                    # code...
+                                                    break;
+                                            }
+                                        ?></td>
                                     <td><?php echo $data['nominal']; ?></td>
                                 </tr>
                                 <?php
