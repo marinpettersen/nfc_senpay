@@ -32,7 +32,7 @@
                             <tbody>
                             <?php
                                     include "config/koneksi.php";
-                                    $qq = "SELECT * FROM transfer_rek";
+                                    $qq = "SELECT a.*, b.nama as nama_user FROM transfer_rek a LEFT JOIN customer b ON a.id_user=b.id_user";
                                     $exe = mysqli_query($connect,$qq);
                                     $no = 1;
                                     while($data=mysqli_fetch_array($exe)){
@@ -40,12 +40,16 @@
                                 
                                 <tr>
                                     <td><?php echo $no++; ?></td>
-                                    <td>s</td>
-                                    <td><img src="uploads/<?php echo $data['upload']; ?>" alt="img"></td>
+                                    <td><?php echo $data['nama_user']; ?></td>
+                                    <td>
+                                    <a target="_blank" href="uploads/<?php echo $data['upload']; ?>">
+                                    <img src="uploads/<?php echo $data['upload']; ?>" alt="img" style="width:130px"></td>
+                                    </a>
                                     <td><?php echo $data['keterangan']; ?></td>
                                     <td><?php echo $data['no_transaksi']; ?></td>
                                     <td><?php echo date('d-m-Y ', strtotime($data['tgl_transfer']));?></td>
-                                    <td><?php echo $data['jmlh_transfer']; ?></td>
+                                    <td>Rp.
+                                        <?php echo number_format($data['jmlh_transfer'],0,',','.'); ?>,-</td>
                                 </tr>
                                 <?php
                                     }

@@ -17,6 +17,11 @@
                                 <h4 class="card-title">Riwayat Transaksi</h4>
                                 <h6 class="card-subtitle">Transaksi User</h6>
                                 <div class="table-responsive">
+                        <form>
+                            <input type="text" class="form-control rangepicker col-md-4" name="tanggal" value="<?php echo (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');?>">
+                            <input type="hidden" value="rtransaksibuy" name="p">
+                            <input type="submit" class="btn btn-success" name="Filter" value="Filter">
+                        </form>
                         <table class="table color-table inverse-table">
                             <thead>
                                 <tr>
@@ -33,7 +38,15 @@
                             <tbody>
                                 <?php
                                     include "config/koneksi.php";
-                                    $query="SELECT t.* FROM transaksi t join customer ON customer.id_card = t.trans_from join user ON user.id_user = customer.id_user WHERE user.username = '$username'";
+                                    if(isset($_GET['Filter'])){
+                                        $tanggal = explode(" - ", $_GET['tanggal']);
+                                        $tanggal_mulai = date('Y-m-d', strtotime($tanggal[0]));
+                                        $tanggal_selesai = date('Y-m-d', strtotime($tanggal[1]));
+                                        $query="SELECT t.* FROM transaksi t join customer ON customer.id_card = t.trans_from join user ON user.id_user = customer.id_user WHERE user.username = '$username' AND waktu BETWEEN DATE('$tanggal_mulai') AND DATE('$tanggal_selesai')";
+                                    }else{
+                                        $query="SELECT t.* FROM transaksi t join customer ON customer.id_card = t.trans_from join user ON user.id_user = customer.id_user WHERE user.username = '$username'";
+                                    }
+                                    // echo $query;
                                     $exe = mysqli_query($connect,$query);
                                     $no = 1;
                                     while($data=mysqli_fetch_array($exe)){

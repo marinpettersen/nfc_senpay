@@ -50,6 +50,7 @@ if (isset($_GET['p'])) {
     <!-- You can change the theme colors from here -->
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="assets/plugins/chartist-js/dist/chartist.css" id="theme" rel="stylesheet">
+    <link href="js/daterangepicker/daterangepicker.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -126,6 +127,7 @@ if (isset($_GET['p'])) {
                         </button>
                         <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal2">
                             TOP UP</button> -->
+                        
                         <?php
                         }elseif($level_user=='user'){
                                 $blc = "SELECT saldo FROM customer where id_user='$id'";
@@ -157,6 +159,17 @@ if (isset($_GET['p'])) {
                     <!-- User profile and search -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
+
+                        <li class="nav-item dropdown">
+                            <?php
+                                $tanggal = date('Y-m-01'); 
+                                $query = "SELECT SUM(nominal) as total_masuk FROM transaksi WHERE trans_type IN('1','2') GROUP BY MONTH($tanggal) LIMIT 1";
+                                $sql = mysqli_query($connect, $query);
+
+                                $total_venue = mysqli_fetch_assoc($sql);
+                            ?>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:;" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-money"></i> Rp. <?php echo number_format($total_venue['total_masuk'], 0, ',','.'); ?>,-</a></i>
+                        </li>
                 
                         <!-- ============================================================== -->
                         <!-- Profile -->
@@ -388,6 +401,8 @@ if (isset($_GET['p'])) {
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="js/daterangepicker/moment.min.js"></script>
+    <script src="js/daterangepicker/daterangepicker.js"></script>
 
     <?php
 
@@ -419,6 +434,21 @@ if (isset($_GET['p'])) {
                 right: 40
             }
             });
+
+            $('.rangepicker').daterangepicker({
+                locale: {
+                    format: 'DD-MM-YYYY'
+                },
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            });
+            
         });
 </script>
     
