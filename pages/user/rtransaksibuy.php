@@ -57,7 +57,8 @@
                                     <td><?php echo $data['id_transaksi']; ?></td>
                                     <td><?php echo date('d-m-Y H:i', strtotime($data['waktu']));?></td>
                                     <td><?php echo $data['trans_to']; ?></td>
-                                    <td><?php 
+                                    <td class="text-center">
+                                    <?php 
                                     $tipe=$data['trans_type'];
                                     if($tipe==1){
                                         echo 'top up';

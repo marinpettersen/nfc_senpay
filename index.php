@@ -121,6 +121,16 @@ if (isset($_GET['p'])) {
                         <?php
                         if($level_user=='admin'){
                         ?>
+                        <li class="nav-item dropdown">
+                            <?php
+                                $tanggal = date('Y-m-01'); 
+                                $query = "SELECT SUM(nominal) as total_masuk FROM transaksi WHERE trans_type IN('1','2') GROUP BY MONTH($tanggal) LIMIT 1";
+                                $sql = mysqli_query($connect, $query);
+
+                                $total_venue = mysqli_fetch_assoc($sql);
+                            ?>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:;" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-money"></i> Total Balance Rp. <?php echo number_format($total_venue['total_masuk'], 0, ',','.'); ?>,-</a></i>
+                        </li>
                         <!-- Button trigger modal -->
                         <!-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
                             Withdraw
@@ -159,18 +169,6 @@ if (isset($_GET['p'])) {
                     <!-- User profile and search -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
-
-                        <li class="nav-item dropdown">
-                            <?php
-                                $tanggal = date('Y-m-01'); 
-                                $query = "SELECT SUM(nominal) as total_masuk FROM transaksi WHERE trans_type IN('1','2') GROUP BY MONTH($tanggal) LIMIT 1";
-                                $sql = mysqli_query($connect, $query);
-
-                                $total_venue = mysqli_fetch_assoc($sql);
-                            ?>
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:;" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-money"></i> Rp. <?php echo number_format($total_venue['total_masuk'], 0, ',','.'); ?>,-</a></i>
-                        </li>
-                
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->

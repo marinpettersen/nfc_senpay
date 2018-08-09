@@ -17,38 +17,12 @@
             <div class="card-body">
                 <h4 class="card-title">Riwayat Transaksi</h4>
                 <h6 class="card-subtitle">Transaksi Customers - Pedagang </h6>
-                Bulan
-                <select name="bulan">
-                    <option value="01">Januari</option>
-                    <option value="02">Februari</option>
-                    <option value="03">Maret</option>
-                    <option value="04">April</option>
-                    <option value="05">Mei</option>
-                    <option value="06">Juni</option>
-                    <option value="07">Juli</option>
-                    <option value="08">Agustus</option>
-                    <option value="09">September</option>
-                    <option value="10">Oktober</option>
-                    <option value="12">November</option>
-                    <option value="12">Desember</option>
-                </select>
-                Tahun
-                <select name="tahun">
-                    <?php
-                    $mulai= date('Y') - 50;
-                    for($i = $mulai;$i<$mulai + 100;$i++){
-                        $sel = $i == date('Y') ? ' selected="selected"' : '';
-                        echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
-                    }
-                    ?>
-                </select>
-
-
-
-                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#">
-                    Submit
-                </button>
                 <div class="table-responsive">
+                <form>
+                            <input type="text" class="form-control rangepicker col-md-4" name="tanggal" value="<?php echo (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');?>">
+                            <input type="hidden" value="rtransaksipedagang" name="p">
+                            <input type="submit" class="btn btn-success" name="Filter" value="Filter">
+                        </form>
                     <table class="table color-table inverse-table">
                         <thead>
                             <tr>
@@ -61,28 +35,40 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             <?php
                                     include "config/koneksi.php";
-                                    $query="SELECT * FROM transaksi";
+                                    if(isset($_GET['Filter'])){
+                                        $tanggal = explode(" - ", $_GET['tanggal']);
+                                        $tanggal_mulai = date('Y-m-d', strtotime($tanggal[0]));
+                                        $tanggal_selesai = date('Y-m-d', strtotime($tanggal[1]));
+                                        $query="SELECT * FROM transaksi WHERE waktu BETWEEN DATE('$tanggal_mulai') AND DATE('$tanggal_selesai')";
+                                    }else{
+                                        $query="SELECT * FROM transaksi";
+
+                                    }
+                                    // echo $query;
                                     $exe = mysqli_query($connect,$query);
                                     $no = 1;
                                     while($data=mysqli_fetch_array($exe)){
                                 ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $no++; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo date('d-m-Y H:i', strtotime($data['waktu']));?>
-                                    </td>
-                                    <td>
-                                        <?php echo $data['trans_from']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $data['trans_to']; ?>
-                                    </td>
-                                    <td class="text-center">
-                                        <?php
+
+                                
+                                    <tr>
+                                        <td>
+                                            <?php echo $no++; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo date('d-m-Y H:i', strtotime($data['waktu']));?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['trans_from']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['trans_to']; ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <?php
                                             switch ($data['trans_type']) {
                                                 case 1:
                                                     echo '<h3><span class="badge badge-primary">Top up</span></h3>';
@@ -98,11 +84,11 @@
                                                     break;
                                             }
                                         ?>
-                                    </td>
-                                    <td>Rp.
-                                        <?php echo number_format($data['nominal'],0,',','.'); ?>,-</td>
-                                </tr>
-                                <?php
+                                        </td>
+                                        <td>Rp.
+                                            <?php echo number_format($data['nominal'],0,',','.'); ?>,-</td>
+                                    </tr>
+                                    <?php
                                     }
                                 ?>
                         </tbody>
