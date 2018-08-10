@@ -168,11 +168,11 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: #e8d1fc;
+  background: -webkit-linear-gradient(-135deg, #99c7f2, #bcc2e1);
+  background: -o-linear-gradient(-135deg, #99c7f2, #bcc2e1);
+  background: -moz-linear-gradient(-135deg, #99c7f2, #bcc2e1);
+  background: linear-gradient(-135deg, #99c7f2, #bcc2e1);
 }
 
 .wrap-login100 {
@@ -332,7 +332,7 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #57b846;
+  background: #4d7dd6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

@@ -16,7 +16,7 @@ if(isset($_SESSION['id_user'])){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/nfcfavicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -39,19 +39,19 @@ if(isset($_SESSION['id_user'])){
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
+					<img src="images/img-nfc.png" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form" action="proses_login.php" method="post">
-					<span class="login100-form-title">
-						Login
+					<span class="login100-form-title" >
+						Sistem Pembayaran Elektronik
 					</span>
 
 					<div class="wrap-input100 validate-input" action="proses_login.php" method="post" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="mdi mdi-account" aria-hidden="true"></i>
+							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
