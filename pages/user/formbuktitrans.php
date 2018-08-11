@@ -37,7 +37,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Form Validation</h4>
+                                <h4 class="card-title">Form Bukti Transfer</h4>
                                 <h6 class="card-subtitle">Form Upload Bukti Transfer</a></h6>
                                 <form class="m-t-40" novalidate action="pages/user/prosbuktitrans.php?id=<?php echo $_SESSION['id_user'];?>" method="post" enctype="multipart/form-data">
                                     <div class="form-group">

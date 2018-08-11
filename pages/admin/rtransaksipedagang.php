@@ -42,7 +42,7 @@
                                         $tanggal = explode(" - ", $_GET['tanggal']);
                                         $tanggal_mulai = date('Y-m-d', strtotime($tanggal[0]));
                                         $tanggal_selesai = date('Y-m-d', strtotime($tanggal[1]));
-                                        $query="SELECT * FROM transaksi WHERE waktu BETWEEN DATE('$tanggal_mulai') AND DATE('$tanggal_selesai')";
+                                        $query="SELECT * FROM transaksi WHERE DATE(waktu) BETWEEN '$tanggal_mulai' AND DATE'$tanggal_selesai'";
                                     }else{
                                         $query="SELECT * FROM transaksi";
 
