@@ -74,7 +74,7 @@ if (isset($_SESSION['level'])){
                 <li>
                     <a href="?p=viewbuktitrans">
                         <i class="mdi mdi-file-chart"></i>
-                        <span class="hide-menu">View Bukti Transaksi</span>
+                        <span class="hide-menu">View Bukti Transfer</span>
                     </a>
                     
                 </li>
