@@ -43,7 +43,7 @@
                                         $tanggal = explode(" - ", $_GET['tanggal']);
                                         $tanggal_mulai = date('Y-m-d', strtotime($tanggal[0]));
                                         $tanggal_selesai = date('Y-m-d', strtotime($tanggal[1]));
-                                        $query="SELECT t.* FROM transaksi t join seller ON seller.kode_seller = t.trans_to join user ON user.id_user = seller.id_user WHERE user.username = '$username' AND waktu BETWEEN DATE('$tanggal_mulai') AND DATE('$tanggal_selesai')";
+                                        $query="SELECT t.* FROM transaksi t join seller ON seller.kode_seller = t.trans_to join user ON user.id_user = seller.id_user WHERE user.username = '$username' AND DATE(waktu) BETWEEN '$tanggal_mulai' AND DATE'$tanggal_selesai'";
                                     }else{
                                         $query="SELECT t.* FROM transaksi t join seller ON seller.kode_seller = t.trans_to join user ON user.id_user = seller.id_user WHERE user.username = '$username'";
                                     }
