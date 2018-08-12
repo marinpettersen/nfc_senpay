@@ -28,8 +28,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>Tanggal Transaksi</th>
-                                <th>Pembeli</th>
-                                <th>Penjual</th>
+                                <th>Dari</th>
+                                <th>Ke</th>
                                 <th class="text-center">Tipe Transaksi</th>
                                 <th>Nominal</th>
                             </tr>
