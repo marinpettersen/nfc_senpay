@@ -39,7 +39,8 @@
                             <div class="card-body">
                                 <h4 class="card-title">Form Bukti Transfer</h4>
                                 <h6 class="card-subtitle">Form Upload Bukti Transfer</a></h6>
-                                <form class="m-t-40" novalidate action="pages/user/prosbuktitrans.php?id=<?php echo $_SESSION['id_user'];?>" method="post" enctype="multipart/form-data">
+                                <form class="m-t-40" novalidate action="pages/user/prosbuktitrans.php?id=<?php echo $_SESSION['id_user'];?>" method="post" 
+                                id="transfer_form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <h5>Upload Bukti Transfer <span class="text-danger">*</span></h5>
                                         <div class="controls"<small> <code>Required</code> Rename file bukti transfer anda dengan no transaksi sebelum upload</small>

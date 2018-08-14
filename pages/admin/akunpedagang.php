@@ -17,18 +17,18 @@
                                 <h4 class="card-title">Pemegang Alat</h4>
                                 <h6 class="card-subtitle">Akun Pedagang </h6>
                                 <div class="table-responsive">
-                                    <table class="table color-table inverse-table">
+                                    <table id="myTable" class="table color-table inverse-table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>id seller</th>
-                                                <th>id_user</th>
-                                                <th>kode seller</th>
-                                                <th>Username</th>
-                                                <th>Alamat</th>
-                                                <th>No.Telp</th>
-                                                <th>saldo</th>
-                                                <th class"text-nowrap"> Option</th>
+                                                <th style="background-color:#007bff">No.</th>
+                                                <th style="background-color:#007bff">id seller</th>
+                                                <th style="background-color:#007bff">id_user</th>
+                                                <th style="background-color:#007bff">kode seller</th>
+                                                <th style="background-color:#007bff">Username</th>
+                                                <th style="background-color:#007bff">Alamat</th>
+                                                <th style="background-color:#007bff">No.Telp</th>
+                                                <th style="background-color:#007bff">saldo</th>
+                                                <th style="background-color:#007bff" class"text-nowrap"> Option</th>
                                             </tr>
                                         </thead>
                                         <tbody>

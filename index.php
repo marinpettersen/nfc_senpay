@@ -51,6 +51,7 @@ if (isset($_GET['p'])) {
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="assets/plugins/chartist-js/dist/chartist.css" id="theme" rel="stylesheet">
     <link href="js/daterangepicker/daterangepicker.css" id="theme" rel="stylesheet">
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -131,7 +132,10 @@ if (isset($_GET['p'])) {
 
                                 $total_venue = mysqli_fetch_assoc($sql);
                             ?>
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:;" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-money"></i> Total Balance Rp. <?php echo number_format($total_venue['total_masuk'], 0, ',','.'); ?>,-</a></i>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:;" id="2" > <i class="fa fa-money">
+                            </i> Total Balance Rp. <?php echo number_format($total_venue['total_masuk'], 0, ',','.'); ?>,-</a></i>
+                        <!-- notif -->
+                            
                         </li>
                         <!-- Button trigger modal -->
                         <!-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
@@ -400,6 +404,8 @@ if (isset($_GET['p'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
     <script src="js/daterangepicker/moment.min.js"></script>
     <script src="js/daterangepicker/daterangepicker.js"></script>
@@ -420,6 +426,7 @@ if (isset($_GET['p'])) {
             $series .= $data_chart['total_transaksi'].",";
         }
     ?>
+    
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -451,7 +458,12 @@ if (isset($_GET['p'])) {
             
         });
 </script>
-    
+
+    <script>               
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script> 
 </body>
 
 </html>

@@ -19,17 +19,17 @@
                 <h4 class="card-title">Pemegang NFC</h4>
                 <h6 class="card-subtitle">Akun yang terdaftar</h6>
                 <div class="table-responsive">
-                    <table class="table color-table inverse-table">
+                    <table id="myTable" class="table color-table inverse-table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>id_tag</th>
-                                <th>username</th>
-                                <th>nim</th>
-                                <th>NO. Telp</th>
-                                <th>Saldo</td>
+                                <th style="background-color:#007bff">No.</th>
+                                <th style="background-color:#007bff">id_tag</th>
+                                <th style="background-color:#007bff">username</th>
+                                <th style="background-color:#007bff">nim</th>
+                                <th style="background-color:#007bff">NO. Telp</th>
+                                <th style="background-color:#007bff">Saldo</td>
                                     <th style="display: none;">Status</th>
-                                    <th class "text-nowrap"> Option</th>
+                                    <th style="background-color:#007bff" class "text-nowrap"> Option</th>
                             </tr>
                         </thead>
                         <tbody>

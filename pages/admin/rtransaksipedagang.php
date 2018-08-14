@@ -18,20 +18,21 @@
                 <h4 class="card-title">Riwayat Transaksi</h4>
                 <h6 class="card-subtitle">Transaksi Customers - Pedagang </h6>
                 <div class="table-responsive">
-                <form>
+                        <form>
                             <input type="text" class="form-control rangepicker col-md-4" name="tanggal" value="<?php echo (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');?>">
                             <input type="hidden" value="rtransaksipedagang" name="p">
                             <input type="submit" class="btn btn-success" name="Filter" value="Filter">
                         </form>
-                    <table class="table color-table inverse-table">
+                        
+                    <table id="myTable" class="table color-table inverse-table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Tanggal Transaksi</th>
-                                <th>Dari</th>
-                                <th>Ke</th>
-                                <th class="text-center">Tipe Transaksi</th>
-                                <th>Nominal</th>
+                                <th style="background-color:#007bff">No.</th>
+                                <th style="background-color:#007bff">Tanggal Transaksi</th>
+                                <th style="background-color:#007bff">Dari</th>
+                                <th style="background-color:#007bff">Ke</th>
+                                <th style="background-color:#007bff" class="text-center">Tipe Transaksi</th>
+                                <th style="background-color:#007bff">Nominal</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,6 +95,8 @@
                         </tbody>
                     </table>
                 </div>
+                
+
 
             </div>
         </div>

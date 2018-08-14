@@ -17,16 +17,16 @@
                                 <h4 class="card-title">Data Bukti Transfer</h4>
                                 <h6 class="card-subtitle">Top up dari transfer</h6>
                                 <div class="table-responsive">
-                        <table class="table color-table inverse-table">
+                        <table id="myTable" class="table color-table inverse-table">
                             <thead>
                                 <tr>
-                                    <th width="5%">#</th>
-                                    <th>Nama</th>
-                                    <th>Foto Bukti Transfer</th>
-                                    <th>Keterangan</th>
-                                    <th>No. Transaksi</th>
-                                    <th>Tanggal</th>
-                                    <th>Jumlah</th>
+                                    <th style="background-color:#007bff" width="5%">No.</th>
+                                    <th style="background-color:#007bff">Nama</th>
+                                    <th style="background-color:#007bff">Foto Bukti Transfer</th>
+                                    <th style="background-color:#007bff">Keterangan</th>
+                                    <th style="background-color:#007bff">No. Transaksi</th>
+                                    <th style="background-color:#007bff">Tanggal</th>
+                                    <th style="background-color:#007bff">Jumlah</th>
                                 </tr>
                             </thead>
                             <tbody>

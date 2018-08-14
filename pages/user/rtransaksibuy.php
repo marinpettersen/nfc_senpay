@@ -22,15 +22,15 @@
                             <input type="hidden" value="rtransaksibuy" name="p">
                             <input type="submit" class="btn btn-success" name="Filter" value="Filter">
                         </form>
-                        <table class="table color-table inverse-table">
+                        <table id="myTable" class="table color-table inverse-table">
                             <thead>
                                 <tr>
-                                    <th width="5%">#</th>
-                                    <th>ID Transaksi</th>
-                                    <th>Tanggal Transaksi</th>
-                                    <th>Pedagang</th>
-                                    <th>Tipe Transaksi</th>
-                                    <th>Nominal</th>
+                                    <th style="background-color:#007bff" width="5%">#</th>
+                                    <th style="background-color:#007bff">ID Transaksi</th>
+                                    <th style="background-color:#007bff">Tanggal Transaksi</th>
+                                    <th style="background-color:#007bff">Pedagang</th>
+                                    <th style="background-color:#007bff">Tipe Transaksi</th>
+                                    <th style="background-color:#007bff">Nominal</th>
                                 </tr>
                             </thead>
                             <?php
