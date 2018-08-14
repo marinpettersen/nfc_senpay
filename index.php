@@ -51,6 +51,7 @@ if (isset($_GET['p'])) {
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="assets/plugins/chartist-js/dist/chartist.css" id="theme" rel="stylesheet">
     <link href="js/daterangepicker/daterangepicker.css" id="theme" rel="stylesheet">
+    <link href="assets/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -399,6 +400,8 @@ if (isset($_GET['p'])) {
 
     <!-- ============================================================== -->
     <!-- Style switcher -->
+    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
     <!-- ============================================================== -->
     <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- ============================================================== -->
