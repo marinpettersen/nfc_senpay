@@ -23,7 +23,7 @@
                     <table class="table table-bordered table-hover color-table inverse-table" style="width:100%">
                         <thead>
                             <tr>
-                                <th width="5%">#</th>
+                                <th width="5%">No.</th>
                                 <th>No. Kartu</th>
                                 <th width="5%">Register</th>
                             </tr>
