@@ -31,7 +31,7 @@
 					$query = "UPDATE seller SET saldo=saldo+".$cost." WHERE kode_seller='$seller_code'";
 					$sql = mysqli_query($connect, $query);
 
-					echo "3,".$remaining;
+					echo "3,".$remaining. ','.$data_user['nama_customer'];
 					return true;
 
 				}else{
@@ -42,7 +42,7 @@
 				
 			}*/
 			else{
-				echo '1,'.$remaining;
+				echo '1,'.$remaining.','.$data_user['nama_customer'];
 				return true;
 			}
 			

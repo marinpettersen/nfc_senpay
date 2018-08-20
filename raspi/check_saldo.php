@@ -5,8 +5,8 @@
 
 		include "../config/koneksi.php";
 		
-		$id_card = $_POST['card_id'];
-		$nama = $_POST['nama'];
+        $id_card = $_POST['card_id'];
+        $nama = $_POST['nama']
 
 		$query = "SELECT * FROM customer WHERE id_card='$id_card' AND nama='$nama'";
 		$sql = mysqli_query($connect, $query);
